@@ -19,7 +19,7 @@ const Nav = () => {
         </div>
         <input type="text"   placeholder="&#xF002;   Search by name"   />
       </div>
-      <button className="add-photo">Add a photo</button>
+      {/* <button className="add-photo">Add a photo</button> */}
       <div className="overly">
         <form action="#">
           <p>Add a new photo</p>
@@ -27,8 +27,10 @@ const Nav = () => {
           <input type="text" placeholder="Suspendisse elit massa" id="input-label"/>
           <label htmlFor="input-url">Photo URL</label>
           <input type="text" placeholder="https://images.unsplash.com/photo-1584395630827-860eee694d7b?ixlib=r..." id="input-url" />
-          <button  className="add-photo">Submit</button>
-          <button type="submit" className="add-photo">Submit</button>
+          <div className="button-container">
+            <button type="submit" className="cancel">Cancel</button>
+            <button  className="add-photo">Submit</button>
+          </div>
         </form>
       </div>
     </div>
