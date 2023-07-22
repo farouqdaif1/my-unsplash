@@ -1,6 +1,9 @@
 const Nav = () => {
   const handelOverlay = () => {
-    document.getElementById("overly");
+    const element: HTMLElement | null = document.getElementById("overly");
+    if (element) {
+      element.classList.toggle("disappear");
+    }
   };
   return (
     <div className="NavBar">
@@ -47,7 +50,9 @@ const Nav = () => {
         </div>
         <input type="text" placeholder="&#xF002;   Search by name" />
       </div>
-      <button className="add-photo">Add a photo</button>
+      <button className="add-photo" onClick={handelOverlay}>
+        Add a photo
+      </button>
       <div id="overly" className="overly">
         <form action="#">
           <p>Add a new photo</p>
@@ -64,7 +69,7 @@ const Nav = () => {
             id="input-url"
           />
           <div className="button-container">
-            <button type="submit" className="cancel" onClick={handelOverlay}>
+            <button className="cancel" onClick={handelOverlay}>
               Cancel
             </button>
             <button className="add-photo">Submit</button>
