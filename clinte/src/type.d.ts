@@ -3,11 +3,9 @@ interface ImageData {
     link: string
     label: string
 }
-type ImageState = {
-    images: ImageData[]
-}
+type ImageState = ImageData[]
 type ImageAction = {
     type: string
-    image: ImageData
+    payload: ImageData
 }
 type DispatchType = (args: ImageAction) => ImageAction
