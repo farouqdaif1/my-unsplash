@@ -1,13 +1,13 @@
-interface Image {
+interface ImageData {
     id: number
-    imageLink: string
-    title: string
+    link: string
+    label: string
 }
 type ImageState = {
-    articles: Image[]
+    images: ImageData[]
 }
 type ImageAction = {
     type: string
-    article: Image
+    image: ImageData
 }
 type DispatchType = (args: ImageAction) => ImageAction
