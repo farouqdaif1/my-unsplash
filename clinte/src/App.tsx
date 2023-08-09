@@ -4,9 +4,9 @@ const App = () => {
   return (
     <div>
       <Nav />
-      <Home/>
+      <Home />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

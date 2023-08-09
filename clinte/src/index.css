@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans:wght@500&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: "Noto Sans", sans-serif;
+  padding: 32px 5% 32px 5%;
+}
+.NavBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 55px;
+  margin-bottom: 100px;
+}
+.NavBar .logo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  position: relative;
+}
+.NavBar .logo-container .logo {
+  width: 138px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.NavBar .logo-container input {
+  padding: 15.5px 16.2px;
+  font-family: FontAwesome, "Noto Sans", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  width: 300px;
+  height: 55px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  border: 1px solid #bdbdbd;
+  box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 60px;
+  left: 10px;
+}
+.NavBar button {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  width: 137px;
+  height: 55px;
+  flex-shrink: 0;
+  background-color: #3db46d;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  border: none;
+  color: #ffffff;
+  outline: none;
+}
+.overly {
+  display: none;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.25);
+}
+.overly form {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 32px;
+  border-radius: 12px;
+  background: #fff;
+  width: 80%;
+  height: 50%;
+  flex-shrink: 0;
+  transform: translate(15%, 50%);
+  -webkit-transform: translate(15%, 50%);
+  -moz-transform: translate(15%, 50%);
+  -ms-transform: translate(15%, 50%);
+  -o-transform: translate(15%, 50%);
+}
+.overly form p {
+  color: #333;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 20.91px;
+}
+.overly form label {
+  display: flex;
+  flex-direction: column;
+  color: #4f4f4f;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 9.97px;
+}
+#input-label {
+  margin-bottom: 18.55px;
+}
+#input-url {
+  margin-bottom: 24px;
+}
+.overly form input {
+  padding: 18px;
+  font-family: "Noto Sans", sans-serif;
+  border-radius: 12px;
+  border: 1px solid #4f4f4f;
+  box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.1);
+}
+.overly form .button-container {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+.overly form .cancel {
+  color: #bdbdbd;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  background-color: transparent;
+}
+.disappear {
+  display: block;
+}
+.home {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.image-item {
+  position: relative;
+  width: auto;
+  height: 306.294px;
+  flex-shrink: 0;
+  object-fit: cover;
+  margin-bottom: 46px;
+}
+.image-item img {
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  border-radius: 16px;
+  background: lightgray 50% / cover no-repeat;
+}
+.image-item .hover {
+  display: none;
+}
+.image-item :hover + .hover {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  border-radius: 24px;
+  background: rgba(0, 0, 0, 0.38);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 18px;
+  cursor: pointer;
+}
+.image-item .hover .delete {
+  align-self: flex-end;
+  background-color: transparent;
+  width: 63px;
+  height: 23px;
+  flex-shrink: 0;
+  border-radius: 38px;
+  border: 1px solid #eb5757;
+  color: #eb5757;
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: lowercase;
+}
+.image-item .hover .title {
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+@media only screen and (min-width: 600px) {
+  .NavBar .logo-container {
+    position: initial;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 40%;
+  }
+
+  .NavBar .logo-container input {
+    position: initial;
+  }
+  .image-item {
+    width: 382.868px;
+  }
+  .image-item img {
+    width: 382.868px;
+  }
+  .overly form {
+    width: 620px;
+    height: 367.205px;
+    flex-shrink: 0;
+    transform: translate(50%, 50%);
+    -webkit-transform: translate(50%, 50%);
+    -moz-transform: translate(50%, 50%);
+    -ms-transform: translate(50%, 50%);
+    -o-transform: translate(50%, 50%);
+  }
+}
