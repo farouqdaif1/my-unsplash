@@ -7,8 +7,8 @@ const imageSlice = createSlice({
   name: 'images',
   initialState,
   reducers: {
-    setImages: (state, action: PayloadAction<Image[]>) => {
-      state.images = action.payload;
+    setImages: (state, action: PayloadAction<ImageState>) => {
+      state.images = action.payload.images;
     }
 
   },

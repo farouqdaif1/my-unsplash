@@ -1,18 +1,20 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Item from "./Item/Item";
 import { fetchData } from "../../store/actions/actionCreators";
 import { RootState } from "../../store/reducers";
+import {  useAppDispatch } from '../../store/hooks'
+
 const Home = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const data = useSelector((state: RootState) => state.reducer.images);
   useEffect(() => {
-    dispatch(fetchData());
-    console.log(data);
+    void dispatch(fetchData());
   }, []);
+
   return (
     <div className="home">
-      {data?.map((ele: { _id: string; label: string; link: string }) => (
+      {data.map((ele: { _id: string; label: string; link: string }) => (
         <Item key={ele._id} ele={ele} />
       ))}
     </div>
