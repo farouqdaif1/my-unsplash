@@ -1,50 +1,21 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Item from "./Item/Item";
+import * as api from "../../store/api/index";
+import { setImages } from "../../store/reducers/reducer";
+
 const Home = () => {
-  const data: { label: string; link: string }[] = [
-    {
-      label: "Helllo Farouq",
-      link: "https://media.istockphoto.com/id/640318118/photo/sunset-over-indian-ocean.jpg?s=612x612&w=0&k=20&c=DLKuEcWW9YwwNid-3ypLu2AJ4uPC4aXoIzyFFjDHUmM=",
-    },
-    {
-      label: "Helllo Farouq",
-      link: "https://media.istockphoto.com/id/640318118/photo/sunset-over-indian-ocean.jpg?s=612x612&w=0&k=20&c=DLKuEcWW9YwwNid-3ypLu2AJ4uPC4aXoIzyFFjDHUmM=",
-    },
-    {
-      label: "Helllo Farouq",
-      link: "https://media.istockphoto.com/id/640318118/photo/sunset-over-indian-ocean.jpg?s=612x612&w=0&k=20&c=DLKuEcWW9YwwNid-3ypLu2AJ4uPC4aXoIzyFFjDHUmM=",
-    },
-    {
-      label: "Helllo Farouq",
-      link: "https://media.istockphoto.com/id/640318118/photo/sunset-over-indian-ocean.jpg?s=612x612&w=0&k=20&c=DLKuEcWW9YwwNid-3ypLu2AJ4uPC4aXoIzyFFjDHUmM=",
-    },
-    {
-      label: "Helllo Farouq",
-      link: "https://media.istockphoto.com/id/640318118/photo/sunset-over-indian-ocean.jpg?s=612x612&w=0&k=20&c=DLKuEcWW9YwwNid-3ypLu2AJ4uPC4aXoIzyFFjDHUmM=",
-    },
-    {
-      label: "Helllo Farouq",
-      link: "https://media.istockphoto.com/id/640318118/photo/sunset-over-indian-ocean.jpg?s=612x612&w=0&k=20&c=DLKuEcWW9YwwNid-3ypLu2AJ4uPC4aXoIzyFFjDHUmM=",
-    },
-    {
-      label: "Helllo Farouq",
-      link: "https://media.istockphoto.com/id/640318118/photo/sunset-over-indian-ocean.jpg?s=612x612&w=0&k=20&c=DLKuEcWW9YwwNid-3ypLu2AJ4uPC4aXoIzyFFjDHUmM=",
-    },
-    {
-      label: "Helllo Farouq",
-      link: "https://media.istockphoto.com/id/640318118/photo/sunset-over-indian-ocean.jpg?s=612x612&w=0&k=20&c=DLKuEcWW9YwwNid-3ypLu2AJ4uPC4aXoIzyFFjDHUmM=",
-    },
-    {
-      label: "Helllo Farouq",
-      link: "https://media.istockphoto.com/id/640318118/photo/sunset-over-indian-ocean.jpg?s=612x612&w=0&k=20&c=DLKuEcWW9YwwNid-3ypLu2AJ4uPC4aXoIzyFFjDHUmM=",
-    },
-    {
-      label: "Helllo Farouq",
-      link: "https://media.istockphoto.com/id/640318118/photo/sunset-over-indian-ocean.jpg?s=612x612&w=0&k=20&c=DLKuEcWW9YwwNid-3ypLu2AJ4uPC4aXoIzyFFjDHUmM=",
-    },
-  ];
+  const dispatch = useDispatch();
+  const data = useSelector((state: ImageState) => state.images);
+  useEffect(() => {
+    api
+      .fetchImages()
+      .then((res) => dispatch(setImages(res.data as Image[])))
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <div className="home">
-      {data.map((ele: { label: string; link: string }, index: number) => (
+      {data?.map((ele: { label: string; link: string }, index: number) => (
         <Item key={index} ele={ele} />
       ))}
     </div>
