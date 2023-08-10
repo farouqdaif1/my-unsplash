@@ -1,5 +1,5 @@
 interface Image{
-    id: string;
+    _id: string;
     label: string;
     link: string; 
 }
@@ -9,5 +9,5 @@ type ImageState= {
 
 type ImagesAction = {
     type: string,
-    payload: Image[],
+    payload: ImageState,
 }

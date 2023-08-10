@@ -1,9 +1,11 @@
 import * as api from '../api';
-import { fetchImages } from '../reducers/reducer';
+import { setImages } from '../reducers/reducer';
+import { Dispatch } from 'redux';
 // Define the async thunk
-export const fetchData = () => async () => {
+export const fetchData = () => async (dispatch: Dispatch<ImagesAction>) => {
     try {
-        return api.fetchImages();
+        const { data } = await api.fetchImages();
+        dispatch(setImages(data));
     } catch (error) {
         console.log(error);
     }

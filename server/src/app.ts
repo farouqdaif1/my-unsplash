@@ -3,10 +3,12 @@ import express, { NextFunction, Request, Response } from "express";
 import imageRoutes from './routes/images';
 import morgan from 'morgan';
 import createHttpError, { isHttpError } from 'http-errors';
+import cors from 'cors';
+
 const app = express();
 app.use(morgan("dev")); //HELP TO SEE THE ERRORS OF WRONG REQUESTS IN PRODUCTION
 app.use(express.json()); //TELL EXPRESS WHAT TYPE OF DATA SHOULD IT ACCEPT
-
+app.use(cors());
 app.use('/api/images', imageRoutes)
 // HANDLING ERRORS
 app.use((req, res, next) => { //when we try to access routes that we did not setup it it will handling th error  
