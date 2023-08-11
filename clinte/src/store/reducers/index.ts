@@ -1,5 +1,5 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import imageReducer from './reducer';
+import imageReducer from './slice';
 
 
 const rootReducer = combineReducers({

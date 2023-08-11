@@ -1,13 +1,10 @@
-interface Image{
-    _id: string;
+interface Image {
+    _id?: string;
     label: string;
-    link: string; 
+    link: string;
+    createdAt?: string;
+    updatedAt?: string;    
 }
-type ImageState= {
+type ImageState = {
     images: Image[];
-}
-
-type ImagesAction = {
-    type: string,
-    payload: ImageState,
 }

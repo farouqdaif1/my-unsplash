@@ -9,9 +9,14 @@ const imageSlice = createSlice({
   reducers: {
     setImages: (state, action: PayloadAction<ImageState>) => {
       state.images = action.payload.images;
-    }
-
+    },
+    removeImage: (state, action: PayloadAction<string>) => {
+      state.images = state.images.filter((image) => image._id !== action.payload);
+    },
+    addImage: (state, action: PayloadAction<Image>) => {
+      state.images.push(action.payload);
+    },
   },
 });
-export const { setImages } = imageSlice.actions;
+export const { setImages, removeImage, addImage } = imageSlice.actions;
 export default imageSlice.reducer;
