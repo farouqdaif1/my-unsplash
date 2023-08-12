@@ -28,7 +28,7 @@
 
 - [Table of Contents](#table-of-contents)
 - [Overview](#overview)
-  - [Built With](#built-with)
+- [Built With](#built-with)
 - [Features](#features)
 - [How To Use](#how-to-use)
 - [Contact](#contact)
@@ -39,7 +39,8 @@
 
 ![screenshot](http://res.cloudinary.com/dsmjgw4ty/image/upload/v1691851871/p7prkohuqijlsl6ui3pg.png)
 
-This application allows users to upload an image via dragging or using the file input. The image is uploaded on the Cloudinary platform which will provide a link that can be saved/copied. This project is built with TypeScript and React and uses a mobile-first approach to styling.
+It's an app similar to Unsplash famous web app, where you can upload an image and publish it on a public board. Unlike the unsplash official app, all images are shared and there is no sign-in functionality so that anyone can interact freely with all content. This is one of the user stories of the challenge.
+
 
 
 ### Built With
@@ -54,13 +55,13 @@ This application allows users to upload an image via dragging or using the file 
 
 <!-- List the features of your application or follow the template. Don't share the figma file here :) -->
 
-Challenge: Create an Image Uploader application. Fulfill user stories below:
+Challenge: Create my unSplash application. Fulfill user stories below:
 
-- User story: I can drag and drop an image to upload it.
-- User story: I can choose to select an image from my folder.
-- User story: I can see a loader when uploading.
-- User story: When the image is uploaded, I can see the image and copy it.
-- User story: I can choose to copy to the clipboard .
+
+- User story: I can add a new photo to the list - the new photo should be on top of the list
+- User story: I can search for photos by label
+- User story: When I hover a photo, I can see a label and a delete button
+- User story: I can delete images
 
 ## How To Use
 
@@ -72,11 +73,23 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 # Clone this repository
 $ git clone https://github.com/farouqdaif1/my-unsplash.git
 
+#open the client folder
+$ cd client
+
 # Install dependencies
 $ npm install
 
 # Run the app
 $ npm run dev
+
+#open the server folder
+$ cd server
+
+# Install dependencies
+$ npm install
+
+# Run the app
+$ npm start
 ```
 ## Contact
 
