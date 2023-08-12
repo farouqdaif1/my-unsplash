@@ -1,9 +1,24 @@
+import { useState } from "react";
+import { useAppDispatch } from "../../store/hooks";
+import { createImage } from "../../store/actions/actionCreators";
 const Nav = () => {
   const handelOverlay = () => {
     const element: HTMLElement | null = document.getElementById("overly");
     if (element) {
       element.classList.toggle("disappear");
     }
+  };
+  const [imageData, setImageData] = useState({ id: "", label: "", link: "" });
+  const clear = () => {
+    setImageData({ id: "", label: "", link: "" });
+  };
+  const dispatch = useAppDispatch();
+  const handleSubmit = (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    console.log(imageData);
+    void dispatch(createImage(imageData));
+    clear();
+    handelOverlay();
   };
   return (
     <div className="NavBar">
@@ -54,19 +69,27 @@ const Nav = () => {
         Add a photo
       </button>
       <div id="overly" className="overly">
-        <form action="#">
+        <form id="Form" onSubmit={handleSubmit}>
           <p>Add a new photo</p>
           <label htmlFor="input-label">Label</label>
           <input
             type="text"
             placeholder="Suspendisse elit massa"
             id="input-label"
+            value={imageData.label}
+            onChange={(e) => {
+              setImageData({ ...imageData, label: e.target.value });
+            }}
           />
           <label htmlFor="input-url">Photo URL</label>
           <input
             type="text"
             placeholder="https://images.unsplash.com/photo-1584395630827-860eee694d7b?ixlib=r..."
             id="input-url"
+            value={imageData.link}
+            onChange={(e) => {
+              setImageData({ ...imageData, link: e.target.value });
+            }}
           />
           <div className="button-container">
             <button className="cancel" onClick={handelOverlay}>
