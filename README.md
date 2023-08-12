@@ -71,9 +71,11 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/farouqdaif1/image-uploader.git
+$ git clone https://github.com/farouqdaif1/my-unsplash.git
+
 #open the client folder
 $ cd client
+
 # Install dependencies
 $ npm install
 
