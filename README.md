@@ -39,7 +39,8 @@
 
 ![screenshot](http://res.cloudinary.com/dsmjgw4ty/image/upload/v1691851871/p7prkohuqijlsl6ui3pg.png)
 
-This application allows users to upload an image via dragging or using the file input. The image is uploaded on the Cloudinary platform which will provide a link that can be saved/copied. This project is built with TypeScript and React and uses a mobile-first approach to styling.
+It's an app similar to Unsplash famous web app, where you can upload an image and publish it on a public board. Unlike the unsplash official app, all images are shared and there is no sign-in functionality so that anyone can interact freely with all content. This is one of the user stories of the challenge.
+
 
 
 ### Built With
