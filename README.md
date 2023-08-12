@@ -54,13 +54,13 @@ This application allows users to upload an image via dragging or using the file 
 
 <!-- List the features of your application or follow the template. Don't share the figma file here :) -->
 
-Challenge: Create an Image Uploader application. Fulfill user stories below:
+Challenge: Create my unSplash application. Fulfill user stories below:
 
-- User story: I can drag and drop an image to upload it.
-- User story: I can choose to select an image from my folder.
-- User story: I can see a loader when uploading.
-- User story: When the image is uploaded, I can see the image and copy it.
-- User story: I can choose to copy to the clipboard .
+
+- User story: I can add a new photo to the list - the new photo should be on top of the list
+- User story: I can search for photos by label
+- User story: When I hover a photo, I can see a label and a delete button
+- User story: I can delete images
 
 ## How To Use
 
@@ -71,12 +71,22 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 ```bash
 # Clone this repository
 $ git clone https://github.com/farouqdaif1/image-uploader.git
-
+#open clint folder
+$ cd clint
 # Install dependencies
 $ npm install
 
 # Run the app
 $ npm run dev
+
+#open server folder
+$ cd server
+
+# Install dependencies
+$ npm install
+
+# Run the app
+$ npm start
 ```
 ## Contact
 
