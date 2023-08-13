@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { useAppDispatch } from "../../store/hooks";
 import { createImage } from "../../store/actions/actionCreators";
 const Nav = () => {
@@ -19,6 +19,11 @@ const Nav = () => {
     void dispatch(createImage(imageData));
     clear();
     handelOverlay();
+  };
+  const [search, setSearch] = useState("");
+  const handelSearch = (e: ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value);
+    console.warn(e.target.value);
   };
   return (
     <div className="NavBar">
@@ -63,7 +68,12 @@ const Nav = () => {
             </defs>
           </svg>
         </div>
-        <input type="text" placeholder="&#xF002;   Search by name" />
+        <input
+          type="text"
+          value={search}
+          onChange={handelSearch}
+          placeholder="&#xF002;   Search by name"
+        />
       </div>
       <button className="add-photo" onClick={handelOverlay}>
         Add a photo
