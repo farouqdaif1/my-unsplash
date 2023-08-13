@@ -47,3 +47,15 @@ export const deleteImage: RequestHandler = async (req, res, next) => {
         next(error);
     }
 }
+export const searchImage: RequestHandler = async (req, res, next) => {
+    try {
+        const images = await ImageModel.find({
+            $or: [
+                { label: { $regex: req.params.searchTerm } },
+            ]
+        }).exec();
+        res.status(200).json(images);
+    } catch (error) {
+        next(error);
+    }
+}
