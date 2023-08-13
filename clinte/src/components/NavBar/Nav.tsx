@@ -1,6 +1,10 @@
 import { ChangeEvent, useState } from "react";
 import { useAppDispatch } from "../../store/hooks";
-import { createImage } from "../../store/actions/actionCreators";
+import {
+  createImage,
+  fetchData,
+  searchImage,
+} from "../../store/actions/actionCreators";
 const Nav = () => {
   const handelOverlay = () => {
     const element: HTMLElement | null = document.getElementById("overly");
@@ -20,10 +24,13 @@ const Nav = () => {
     clear();
     handelOverlay();
   };
-  const [search, setSearch] = useState("");
   const handelSearch = (e: ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value);
-    console.warn(e.target.value);
+    const key = e.target.value;
+    if (key) {
+      dispatch(searchImage(key));
+    } else {
+      dispatch(fetchData());
+    }
   };
   return (
     <div className="NavBar">
@@ -70,7 +77,6 @@ const Nav = () => {
         </div>
         <input
           type="text"
-          value={search}
           onChange={handelSearch}
           placeholder="&#xF002;   Search by name"
         />

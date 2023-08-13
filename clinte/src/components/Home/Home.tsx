@@ -6,13 +6,13 @@ const Home = () => {
   const dispatch = useAppDispatch();
   useEffect(() => void dispatch(fetchData()), []);
   const data = useAppSelector((state) => state.reducer.images);
-
-  console.log(data);
   return (
     <div className="home">
-      {data.map((ele) => (
-        <Item key={ele._id} ele={ele} />
-      ))}
+      {data.length > 0 ? (
+        data.map((ele) => <Item key={ele._id} ele={ele} />)
+      ) : (
+        <h1>No Image called this </h1>
+      )}
     </div>
   );
 };
