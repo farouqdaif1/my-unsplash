@@ -19,6 +19,10 @@
     <a href="https://devchallenges.io/challenges/O2iGT9yBd6xZBrOcVirx">
       Challenge
     </a>
+   <span> | </span>
+    <a href="https://my-splash-server.onrender.com/api/images">
+      API
+    </a>
   </h3>
 </div>
 
