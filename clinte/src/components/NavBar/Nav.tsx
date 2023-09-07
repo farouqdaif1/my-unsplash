@@ -1,6 +1,10 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { useAppDispatch } from "../../store/hooks";
-import { createImage } from "../../store/actions/actionCreators";
+import {
+  createImage,
+  fetchData,
+  searchImage,
+} from "../../store/actions/actionCreators";
 const Nav = () => {
   const handelOverlay = () => {
     const element: HTMLElement | null = document.getElementById("overly");
@@ -19,6 +23,14 @@ const Nav = () => {
     void dispatch(createImage(imageData));
     clear();
     handelOverlay();
+  };
+  const handelSearch = (e: ChangeEvent<HTMLInputElement>) => {
+    const key = e.target.value;
+    if (key) {
+      dispatch(searchImage(key));
+    } else {
+      dispatch(fetchData());
+    }
   };
   return (
     <div className="NavBar">
@@ -63,7 +75,11 @@ const Nav = () => {
             </defs>
           </svg>
         </div>
-        <input type="text" placeholder="&#xF002;   Search by name" />
+        <input
+          type="text"
+          onChange={handelSearch}
+          placeholder="&#xF002;   Search by name"
+        />
       </div>
       <button className="add-photo" onClick={handelOverlay}>
         Add a photo
