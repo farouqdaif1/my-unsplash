@@ -1,2 +1,0 @@
-command = "npm run build"  # Adjust this based on your Vite build command
-publish = "dist"           # Adjust this based on your Vite output directory
